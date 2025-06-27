@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: verse-hub-db
+    environment:
+      POSTGRES_DB: verse_hub
+      POSTGRES_USER: verse_hub
+      POSTGRES_PASSWORD: vH8#mK9$pL2@nX4&
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - verse-hub-network
+
+volumes:
+  postgres_data:
+    name: verse-hub-postgres-data
+
+networks:
+  verse-hub-network:
+    name: verse-hub-network
